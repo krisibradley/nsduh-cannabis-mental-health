@@ -1,0 +1,242 @@
+---
+title: "Cannabis Use Modalities Among U.S. Adults: A Replication and Extension of Diaby et al. (2025)"
+author: "Kristopher Bradley, PhD"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    self-contained: true
+execute:
+  warning: false
+  message: false
+---
+
+## Abstract
+
+This study replicates and extends Diaby et al. (2025), which examined disparities in cannabis use modalities among U.S. adults using 2022-2023 National Survey on Drug Use and Health (NSDUH) data. We extend the analysis to 2022-2024 (n=29,494 current cannabis users) and add medical versus recreational use as a moderating variable. Using survey-weighted logistic regression, we replicate the core findings: smoking remains the dominant modality (81.4%), with significant disparities by sex, age, race/ethnicity, education, and income. Higher education and income predict away from smoking toward edibles. Black cannabis users are substantially more likely to smoke and less likely to use alternative modalities. Extension analyses examine whether medical use status moderates these relationships.
+
+## Introduction
+
+Following legalization of cannabis across numerous U.S. states, the cannabis market has diversified substantially, with products including smoked flower, vaporizers, edibles, concentrates (dabbing), topicals, sublingual preparations, and pills now widely available. Understanding which populations use which modalities matters for public health because different delivery routes carry different health risk profiles -- combustion-based smoking carries respiratory risks absent from edibles or topicals, while vaporized concentrates may deliver substantially higher THC doses than smoked flower.
+
+Diaby et al. (2025) provided the first comprehensive national examination of modality disparities using 2022-2023 NSDUH data, finding significant variation by sex, age, race/ethnicity, education, income, and state medical cannabis law status. The present study replicates those findings using 2022-2024 data and extends them by examining medical versus recreational use as a moderating variable -- a distinction central to understanding health-relevant cannabis use patterns but not examined in the original paper.
+
+## Methods
+
+### Data Source
+
+Data were drawn from the 2022-2024 National Survey on Drug Use and Health (NSDUH) combined public use file (n=232,441). NSDUH is an annual nationally representative survey of the U.S. civilian noninstitutionalized population aged 12 and older, conducted by the Substance Abuse and Mental Health Services Administration (SAMHSA). All analyses used the four-year combined public use file weight variable ANALWT2_C3 for pooled three-year estimates, with variance estimation using pseudo-stratum (VESTR_C) and pseudo-replicate (VEREP) variables per SAMHSA guidelines.
+
+### Analytic Sample
+
+The analytic sample was restricted to respondents reporting past 30-day cannabis use (MJREC = 1, 8, or 11), yielding n=29,494 current cannabis users across 2022-2024. Modality variables were not collected in 2021, so the 2021 wave was excluded from modality analyses.
+
+### Measures
+
+**Cannabis use modalities** were assessed via seven binary variables indicating past-year use of each delivery method: smoking, vaping, dabbing, edibles, sublingual/oral absorption, topical application, and pills/capsules. Each was recoded to 1=Yes, 0=No, with don't know, refused, and blank responses treated as missing.
+
+**Medical use** was assessed via MJANYMEDYR, indicating whether any past-year cannabis use was recommended by a doctor or health care professional (1=Yes, 0=No). Note that this variable changed slightly in 2022; 2021 data were excluded from analyses involving this variable.
+
+**Demographic covariates** included sex (male/female), age category (12-17, 18-25, 26-34, 35+), race/ethnicity (White, Black, Native American, Native Hawaiian, Asian, Multiple, Hispanic), education (less than HS, HS grad/GED, some college, college graduate), personal income (<$20k, $20-49k, $50-74k, $75k+), and geographic urbanicity (large metro, small metro, rural).
+
+### Statistical Analysis
+
+All analyses were conducted in R 4.5.2 using the survey package for complex survey design. Weighted prevalence estimates were computed using svymean() and svyby(). Multivariable logistic regression models were estimated using svyglm() with quasibinomial family for each modality outcome, adjusting for all demographic covariates simultaneously. Results are presented as odds ratios (OR) with 95% confidence intervals. All code is available at the project GitHub repository.
+
+## Results
+
+```{r setup}
+library(tidyverse)
+library(survey)
+library(broom)
+library(knitr)
+library(kableExtra)
+
+# Load saved data
+load("nsduh_models.RData")
+```
+
+### Sample Characteristics and Weighted Prevalence
+
+Among 29,494 current cannabis users in 2022-2024, smoking was the most common modality (81.4%), followed by edibles (48.9%), vaping (43.0%), dabbing (20.1%), topicals (8.9%), sublingual use (6.7%), and pills (3.2%).
+
+```{r table1}
+# Rebuild table1 from saved data
+nsduh_design_2224 <- svydesign(
+  id = ~VEREP,
+  strata = ~VESTR_C,
+  weights = ~ANALWT2_C3,
+  data = nsduh_2224,
+  nest = TRUE
+)
+
+fmt <- function(x) paste0(round(x * 100, 1), "%")
+
+overall <- svymean(~smoke + vape + dab + eat + mouth + skin + pill,
+                   design = nsduh_design_2224, na.rm = TRUE)
+
+overall_row <- data.frame(
+  Group = "Overall",
+  Smoke = fmt(coef(overall)["smoke"]),
+  Vape  = fmt(coef(overall)["vape"]),
+  Dab   = fmt(coef(overall)["dab"]),
+  Eat   = fmt(coef(overall)["eat"]),
+  Sublingual = fmt(coef(overall)["mouth"]),
+  Topical = fmt(coef(overall)["skin"]),
+  Pill  = fmt(coef(overall)["pill"])
+)
+
+sex_prev <- svyby(~smoke + vape + dab + eat + mouth + skin + pill,
+                  by = ~female, design = nsduh_design_2224,
+                  FUN = svymean, na.rm = TRUE)
+sex_rows <- data.frame(
+  Group = c("Male", "Female"),
+  Smoke = fmt(sex_prev$smoke),
+  Vape  = fmt(sex_prev$vape),
+  Dab   = fmt(sex_prev$dab),
+  Eat   = fmt(sex_prev$eat),
+  Sublingual = fmt(sex_prev$mouth),
+  Topical = fmt(sex_prev$skin),
+  Pill  = fmt(sex_prev$pill)
+)
+
+age_prev <- svyby(~smoke + vape + dab + eat + mouth + skin + pill,
+                  by = ~age_cat, design = nsduh_design_2224,
+                  FUN = svymean, na.rm = TRUE)
+age_rows <- data.frame(
+  Group = c("12-17", "18-25", "26-34", "35+"),
+  Smoke = fmt(age_prev$smoke),
+  Vape  = fmt(age_prev$vape),
+  Dab   = fmt(age_prev$dab),
+  Eat   = fmt(age_prev$eat),
+  Sublingual = fmt(age_prev$mouth),
+  Topical = fmt(age_prev$skin),
+  Pill  = fmt(age_prev$pill)
+)
+
+educ_prev <- svyby(~smoke + vape + dab + eat + mouth + skin + pill,
+                   by = ~educ, design = nsduh_design_2224,
+                   FUN = svymean, na.rm = TRUE)
+educ_rows <- data.frame(
+  Group = c("Less than HS", "HS grad/GED", "Some college", "College grad"),
+  Smoke = fmt(educ_prev$smoke),
+  Vape  = fmt(educ_prev$vape),
+  Dab   = fmt(educ_prev$dab),
+  Eat   = fmt(educ_prev$eat),
+  Sublingual = fmt(educ_prev$mouth),
+  Topical = fmt(educ_prev$skin),
+  Pill  = fmt(educ_prev$pill)
+)
+
+inc_prev <- svyby(~smoke + vape + dab + eat + mouth + skin + pill,
+                  by = ~income, design = nsduh_design_2224,
+                  FUN = svymean, na.rm = TRUE)
+inc_rows <- data.frame(
+  Group = c("<$20k", "$20-49k", "$50-74k", "$75k+"),
+  Smoke = fmt(inc_prev$smoke),
+  Vape  = fmt(inc_prev$vape),
+  Dab   = fmt(inc_prev$dab),
+  Eat   = fmt(inc_prev$eat),
+  Sublingual = fmt(inc_prev$mouth),
+  Topical = fmt(inc_prev$skin),
+  Pill  = fmt(inc_prev$pill)
+)
+
+table1 <- bind_rows(overall_row, sex_rows, age_rows, educ_rows, inc_rows)
+
+kable(table1,
+      caption = "Table 1. Weighted prevalence of cannabis use modalities by demographic characteristics, NSDUH 2022-2024",
+      col.names = c("Group", "Smoking", "Vaping", "Dabbing", 
+                    "Edibles", "Sublingual", "Topical", "Pill")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  pack_rows("Sex", 2, 3) %>%
+  pack_rows("Age", 4, 7) %>%
+  pack_rows("Education", 8, 11) %>%
+  pack_rows("Income", 12, 15)
+```
+
+### Multivariable Logistic Regression
+
+```{r table2}
+extract_or <- function(model, modality_name) {
+  tidy(model, exponentiate = TRUE, conf.int = TRUE) %>%
+    mutate(modality = modality_name) %>%
+    select(modality, term, estimate, conf.low, conf.high, p.value)
+}
+
+results_table <- bind_rows(
+  extract_or(model_smoke, "Smoking"),
+  extract_or(model_vape,  "Vaping"),
+  extract_or(model_dab,   "Dabbing"),
+  extract_or(model_eat,   "Edibles"),
+  extract_or(model_mouth, "Sublingual"),
+  extract_or(model_skin,  "Topical"),
+  extract_or(model_pill,  "Pill")
+)
+
+pub_table <- results_table %>%
+  filter(term != "(Intercept)") %>%
+  mutate(
+    sig = case_when(
+      p.value < 0.001 ~ "***",
+      p.value < 0.01  ~ "**",
+      p.value < 0.05  ~ "*",
+      p.value < 0.10  ~ ".",
+      TRUE ~ ""
+    ),
+    OR_CI = paste0(round(estimate, 2), " (", 
+                   round(conf.low, 2), "-", 
+                   round(conf.high, 2), ")", sig)
+  ) %>%
+  select(modality, term, OR_CI) %>%
+  pivot_wider(names_from = modality, values_from = OR_CI)
+
+kable(pub_table,
+      caption = "Table 2. Adjusted odds ratios for cannabis use modalities, NSDUH 2022-2024 (n=29,494)",
+      col.names = c("Variable", "Smoking", "Vaping", "Dabbing",
+                    "Edibles", "Sublingual", "Topical", "Pill")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                font_size = 12)
+```
+
+## Discussion
+
+Findings replicate and extend Diaby et al. (2025). Smoking remained the dominant modality across all demographic groups, but substantial disparities were observed. The inverse socioeconomic gradient -- higher education and income predicting away from smoking toward edibles -- is consistent with broader patterns of health behavior stratification and has implications for harm reduction messaging. The strong racial disparity in smoking versus alternative modalities, particularly among Black cannabis users, warrants attention given the respiratory health implications of combustion-based use.
+
+The age gradient in vaping is notable: 74% of adolescent cannabis users (12-17) reported vaping compared to 32% of users aged 35+. This pattern differs from the adult-dominant vaping gradient observed in tobacco research and suggests distinct adoption patterns for cannabis vaporization among younger users.
+
+### Limitations
+
+This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses. The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability.
+
+## References
+
+Diaby, M., Agbonlahor, O., Fennell, B.S., Hart, J.L., & Mattingly, D.T. (2025). Disparities in use modalities among adults who currently use cannabis, 2022-2023. *Journal of Cannabis Research, 7*, 26. https://doi.org/10.1186/s42238-025-00283-x
+
+Substance Abuse and Mental Health Services Administration. (2025). *2022-2024 National Survey on Drug Use and Health public use file*. Rockville, MD: Center for Behavioral Health Statistics and Quality.
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
