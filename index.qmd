@@ -47,6 +47,8 @@ The analytic sample was restricted to respondents reporting past 30-day cannabis
 
 All analyses were conducted in R 4.5.2 using the survey package for complex survey design. Weighted prevalence estimates were computed using svymean() and svyby(). Multivariable logistic regression models were estimated using svyglm() with quasibinomial family for each modality outcome, adjusting for all demographic covariates simultaneously. Results are presented as odds ratios (OR) with 95% confidence intervals. All code is available at the project GitHub repository.
 
+All code is available at the project GitHub repository. Missing data were minimal across all analytic variables (range 0.15%--0.34%) and handled via listwise deletion. Demographic covariates had no missing values. Estimates for the Native Hawaiian subgroup should be interpreted cautiously given the small unweighted sample size (n=111).
+
 ## Results
 
 ```{r setup}
@@ -220,23 +222,4 @@ Diaby, M., Agbonlahor, O., Fennell, B.S., Hart, J.L., & Mattingly, D.T. (2025). 
 Substance Abuse and Mental Health Services Administration. (2025). *2022-2024 National Survey on Drug Use and Health public use file*. Rockville, MD: Center for Behavioral Health Statistics and Quality.
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
+## 
