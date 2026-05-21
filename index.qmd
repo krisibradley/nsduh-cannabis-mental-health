@@ -213,7 +213,8 @@ The age gradient in vaping is notable: 74% of adolescent cannabis users (12-17) 
 
 ### Limitations
 
-This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses. The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability.
+This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses and precluding inclusion of state medical cannabis law status as a covariate, which was examined in Diaby et al. (2025). The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability.
+Several analytic differences from Diaby et al. (2025) should also be noted. The present analysis includes respondents aged 12-17, whereas Diaby et al. restricted to adults 18 and older; this likely contributes to higher overall vaping prevalence estimates given the substantially higher vaping rates among adolescents (74.1% vs. 58.9% among 18-25 year olds in the present sample). Sensitivity analyses adding tobacco, alcohol, and psychological distress as covariates, and analyses restricted to adults aged 18-25, represent natural extensions not included in the present analysis but identified as priorities for future work.
 
 ## References
 
