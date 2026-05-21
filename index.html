@@ -2453,10 +2453,10 @@ border: 0;
   <ul class="collapse">
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   </ul></li>
+  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions">Future Directions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#substance-abuse-and-mental-health-services-administration.-2025.-2022-2024-national-survey-on-drug-use-and-health-public-use-file.-rockville-md-center-for-behavioral-health-statistics-and-quality." id="toc-substance-abuse-and-mental-health-services-administration.-2025.-2022-2024-national-survey-on-drug-use-and-health-public-use-file.-rockville-md-center-for-behavioral-health-statistics-and-quality." class="nav-link" data-scroll-target="#substance-abuse-and-mental-health-services-administration.-2025.-2022-2024-national-survey-on-drug-use-and-health-public-use-file.-rockville-md-center-for-behavioral-health-statistics-and-quality.">Substance Abuse and Mental Health Services Administration. (2025). <em>2022-2024 National Survey on Drug Use and Health public use file</em>. Rockville, MD: Center for Behavioral Health Statistics and Quality.</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code">Running Code</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
 </div>
@@ -2521,6 +2521,7 @@ border: 0;
 <section id="statistical-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h3>
 <p>All analyses were conducted in R 4.5.2 using the survey package for complex survey design. Weighted prevalence estimates were computed using svymean() and svyby(). Multivariable logistic regression models were estimated using svyglm() with quasibinomial family for each modality outcome, adjusting for all demographic covariates simultaneously. Results are presented as odds ratios (OR) with 95% confidence intervals. All code is available at the project GitHub repository.</p>
+<p>All code is available at the project GitHub repository. Missing data were minimal across all analytic variables (range 0.15%–0.34%) and handled via listwise deletion. Demographic covariates had no missing values. Estimates for the Native Hawaiian subgroup should be interpreted cautiously given the small unweighted sample size (n=111).</p>
 </section>
 </section>
 <section id="results" class="level2">
@@ -3073,8 +3074,12 @@ border: 0;
 <p>The age gradient in vaping is notable: 74% of adolescent cannabis users (12-17) reported vaping compared to 32% of users aged 35+. This pattern differs from the adult-dominant vaping gradient observed in tobacco research and suggests distinct adoption patterns for cannabis vaporization among younger users.</p>
 <section id="limitations" class="level3">
 <h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
-<p>This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses. The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability.</p>
+<p>This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses and precluding inclusion of state medical cannabis law status as a covariate, which was examined in Diaby et al. (2025). The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability. Several analytic differences from Diaby et al. (2025) should also be noted. The present analysis includes respondents aged 12-17, whereas Diaby et al. restricted to adults 18 and older; this likely contributes to higher overall vaping prevalence estimates given the substantially higher vaping rates among adolescents (74.1% vs. 58.9% among 18-25 year olds in the present sample). Sensitivity analyses adding tobacco, alcohol, and psychological distress as covariates, and analyses restricted to adults aged 18-25, represent natural extensions not included in the present analysis but identified as priorities for future work.</p>
 </section>
+</section>
+<section id="future-directions" class="level2">
+<h2 class="anchored" data-anchor-id="future-directions">Future Directions</h2>
+<p>Several extensions of the present analysis are planned. First, sensitivity analyses replicating Diaby et al. (2025) more closely will be conducted, including models restricted to adults aged 18 and older, models adding current tobacco use, alcohol use, and illicit drug use as covariates, and a modified Poisson regression examining the number of modalities used as a count outcome. Second, and most central to the extension goals of this project, psychological distress will be added as both a covariate and an outcome. The NSDUH includes the Kessler 6 (K6) psychological distress scale, a validated clinical instrument assessing anxiety and mood symptoms over the past 30 days. Planned analyses will examine whether cannabis use modality predicts K6 distress scores after adjusting for demographic covariates, and whether medical versus recreational use status moderates this relationship. This extension directly addresses a gap in the existing literature by connecting modality choice to mental health outcomes in a nationally representative sample. Third, a year-by-year trend analysis will examine whether modality prevalence shifted meaningfully between 2022 and 2024, which the pooled cross-sectional design cannot fully address. These extensions are in active development and will be added to this repository as analyses are completed.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -3083,29 +3088,8 @@ border: 0;
 <section id="substance-abuse-and-mental-health-services-administration.-2025.-2022-2024-national-survey-on-drug-use-and-health-public-use-file.-rockville-md-center-for-behavioral-health-statistics-and-quality." class="level2">
 <h2 class="anchored" data-anchor-id="substance-abuse-and-mental-health-services-administration.-2025.-2022-2024-national-survey-on-drug-use-and-health-public-use-file.-rockville-md-center-for-behavioral-health-statistics-and-quality.">Substance Abuse and Mental Health Services Administration. (2025). <em>2022-2024 National Survey on Drug Use and Health public use file</em>. Rockville, MD: Center for Behavioral Health Statistics and Quality.</h2>
 </section>
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-</section>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 <!-- -->
 
 </section>
@@ -3563,249 +3547,238 @@ border: 0;
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Cannabis Use Modalities Among U.S. Adults: A Replication and Extension of Diaby et al. (2025)&quot;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Kristopher Bradley, PhD&quot;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>This study replicates and extends Diaby et al. (2025), which examined disparities in cannabis use modalities among U.S. adults using 2022-2023 National Survey on Drug Use and Health (NSDUH) data. We extend the analysis to 2022-2024 (n=29,494 current cannabis users) and add medical versus recreational use as a moderating variable. Using survey-weighted logistic regression, we replicate the core findings: smoking remains the dominant modality (81.4%), with significant disparities by sex, age, race/ethnicity, education, and income. Higher education and income predict away from smoking toward edibles. Black cannabis users are substantially more likely to smoke and less likely to use alternative modalities. Extension analyses examine whether medical use status moderates these relationships.</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>Following legalization of cannabis across numerous U.S. states, the cannabis market has diversified substantially, with products including smoked flower, vaporizers, edibles, concentrates (dabbing), topicals, sublingual preparations, and pills now widely available. Understanding which populations use which modalities matters for public health because different delivery routes carry different health risk profiles -- combustion-based smoking carries respiratory risks absent from edibles or topicals, while vaporized concentrates may deliver substantially higher THC doses than smoked flower.</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>Diaby et al. (2025) provided the first comprehensive national examination of modality disparities using 2022-2023 NSDUH data, finding significant variation by sex, age, race/ethnicity, education, income, and state medical cannabis law status. The present study replicates those findings using 2022-2024 data and extends them by examining medical versus recreational use as a moderating variable -- a distinction central to understanding health-relevant cannabis use patterns but not examined in the original paper.</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Source</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>Data were drawn from the 2022-2024 National Survey on Drug Use and Health (NSDUH) combined public use file (n=232,441). NSDUH is an annual nationally representative survey of the U.S. civilian noninstitutionalized population aged 12 and older, conducted by the Substance Abuse and Mental Health Services Administration (SAMHSA). All analyses used the four-year combined public use file weight variable ANALWT2_C3 for pooled three-year estimates, with variance estimation using pseudo-stratum (VESTR_C) and pseudo-replicate (VEREP) variables per SAMHSA guidelines.</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">### Analytic Sample</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>The analytic sample was restricted to respondents reporting past 30-day cannabis use (MJREC = 1, 8, or 11), yielding n=29,494 current cannabis users across 2022-2024. Modality variables were not collected in 2021, so the 2021 wave was excluded from modality analyses.</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Measures</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>**Cannabis use modalities** were assessed via seven binary variables indicating past-year use of each delivery method: smoking, vaping, dabbing, edibles, sublingual/oral absorption, topical application, and pills/capsules. Each was recoded to 1=Yes, 0=No, with don&#39;t know, refused, and blank responses treated as missing.</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>**Medical use** was assessed via MJANYMEDYR, indicating whether any past-year cannabis use was recommended by a doctor or health care professional (1=Yes, 0=No). Note that this variable changed slightly in 2022; 2021 data were excluded from analyses involving this variable.</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>**Demographic covariates** included sex (male/female), age category (12-17, 18-25, 26-34, 35+), race/ethnicity (White, Black, Native American, Native Hawaiian, Asian, Multiple, Hispanic), education (less than HS, HS grad/GED, some college, college graduate), personal income (&lt;$20k, $20-49k, $50-74k, $75k+), and geographic urbanicity (large metro, small metro, rural).</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Statistical Analysis</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>All analyses were conducted in R 4.5.2 using the survey package for complex survey design. Weighted prevalence estimates were computed using svymean() and svyby(). Multivariable logistic regression models were estimated using svyglm() with quasibinomial family for each modality outcome, adjusting for all demographic covariates simultaneously. Results are presented as odds ratios (OR) with 95% confidence intervals. All code is available at the project GitHub repository.</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Load saved data</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;nsduh_models.RData&quot;</span>)</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample Characteristics and Weighted Prevalence</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>Among 29,494 current cannabis users in 2022-2024, smoking was the most common modality (81.4%), followed by edibles (48.9%), vaping (43.0%), dabbing (20.1%), topicals (8.9%), sublingual use (6.7%), and pills (3.2%).</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r table1}</span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Rebuild table1 from saved data</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>nsduh_design_2224 <span class="ot">&lt;-</span> <span class="fu">svydesign</span>(</span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="sc">~</span>VEREP,</span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">strata =</span> <span class="sc">~</span>VESTR_C,</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  <span class="at">weights =</span> <span class="sc">~</span>ANALWT2_C3,</span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> nsduh_2224,</span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">nest =</span> <span class="cn">TRUE</span></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>fmt <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="fu">round</span>(x <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>)</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>overall <span class="ot">&lt;-</span> <span class="fu">svymean</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>                   <span class="at">design =</span> nsduh_design_2224, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>overall_row <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="st">&quot;Overall&quot;</span>,</span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;smoke&quot;</span>]),</span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;vape&quot;</span>]),</span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;dab&quot;</span>]),</span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;eat&quot;</span>]),</span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;mouth&quot;</span>]),</span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;skin&quot;</span>]),</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;pill&quot;</span>])</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>sex_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>                  <span class="at">by =</span> <span class="sc">~</span>female, <span class="at">design =</span> nsduh_design_2224,</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>sex_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>),</span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>smoke),</span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>vape),</span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>dab),</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>eat),</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>mouth),</span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>skin),</span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>pill)</span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>age_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>                  <span class="at">by =</span> <span class="sc">~</span>age_cat, <span class="at">design =</span> nsduh_design_2224,</span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>age_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;12-17&quot;</span>, <span class="st">&quot;18-25&quot;</span>, <span class="st">&quot;26-34&quot;</span>, <span class="st">&quot;35+&quot;</span>),</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>smoke),</span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>vape),</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>dab),</span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>eat),</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>mouth),</span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>skin),</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>pill)</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>educ_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="sc">~</span>educ, <span class="at">design =</span> nsduh_design_2224,</span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>                   <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>educ_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;Less than HS&quot;</span>, <span class="st">&quot;HS grad/GED&quot;</span>, <span class="st">&quot;Some college&quot;</span>, <span class="st">&quot;College grad&quot;</span>),</span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>smoke),</span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>vape),</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>dab),</span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>eat),</span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>mouth),</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>skin),</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>pill)</span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>inc_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>                  <span class="at">by =</span> <span class="sc">~</span>income, <span class="at">design =</span> nsduh_design_2224,</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>inc_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$20k&quot;</span>, <span class="st">&quot;$20-49k&quot;</span>, <span class="st">&quot;$50-74k&quot;</span>, <span class="st">&quot;$75k+&quot;</span>),</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>smoke),</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>vape),</span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>dab),</span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>eat),</span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>mouth),</span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>skin),</span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>pill)</span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(overall_row, sex_rows, age_rows, educ_rows, inc_rows)</span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(table1,</span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 1. Weighted prevalence of cannabis use modalities by demographic characteristics, NSDUH 2022-2024&quot;</span>,</span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Smoking&quot;</span>, <span class="st">&quot;Vaping&quot;</span>, <span class="st">&quot;Dabbing&quot;</span>, </span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Edibles&quot;</span>, <span class="st">&quot;Sublingual&quot;</span>, <span class="st">&quot;Topical&quot;</span>, <span class="st">&quot;Pill&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Sex&quot;</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Age&quot;</span>, <span class="dv">4</span>, <span class="dv">7</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Education&quot;</span>, <span class="dv">8</span>, <span class="dv">11</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Income&quot;</span>, <span class="dv">12</span>, <span class="dv">15</span>)</span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="fu">### Multivariable Logistic Regression</span></span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r table2}</span></span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>extract_or <span class="ot">&lt;-</span> <span class="cf">function</span>(model, modality_name) {</span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>(model, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">modality =</span> modality_name) <span class="sc">%&gt;%</span></span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(modality, term, estimate, conf.low, conf.high, p.value)</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>results_table <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_smoke, <span class="st">&quot;Smoking&quot;</span>),</span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_vape,  <span class="st">&quot;Vaping&quot;</span>),</span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_dab,   <span class="st">&quot;Dabbing&quot;</span>),</span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_eat,   <span class="st">&quot;Edibles&quot;</span>),</span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_mouth, <span class="st">&quot;Sublingual&quot;</span>),</span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_skin,  <span class="st">&quot;Topical&quot;</span>),</span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_pill,  <span class="st">&quot;Pill&quot;</span>)</span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>pub_table <span class="ot">&lt;-</span> results_table <span class="sc">%&gt;%</span></span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">!=</span> <span class="st">&quot;(Intercept)&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>    <span class="at">sig =</span> <span class="fu">case_when</span>(</span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.001</span> <span class="sc">~</span> <span class="st">&quot;***&quot;</span>,</span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.01</span>  <span class="sc">~</span> <span class="st">&quot;**&quot;</span>,</span>
-<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>  <span class="sc">~</span> <span class="st">&quot;*&quot;</span>,</span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.10</span>  <span class="sc">~</span> <span class="st">&quot;.&quot;</span>,</span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>    <span class="at">OR_CI =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(estimate, <span class="dv">2</span>), <span class="st">&quot; (&quot;</span>, </span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(conf.low, <span class="dv">2</span>), <span class="st">&quot;-&quot;</span>, </span>
-<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(conf.high, <span class="dv">2</span>), <span class="st">&quot;)&quot;</span>, sig)</span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(modality, term, OR_CI) <span class="sc">%&gt;%</span></span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> modality, <span class="at">values_from =</span> OR_CI)</span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pub_table,</span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 2. Adjusted odds ratios for cannabis use modalities, NSDUH 2022-2024 (n=29,494)&quot;</span>,</span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;Smoking&quot;</span>, <span class="st">&quot;Vaping&quot;</span>, <span class="st">&quot;Dabbing&quot;</span>,</span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Edibles&quot;</span>, <span class="st">&quot;Sublingual&quot;</span>, <span class="st">&quot;Topical&quot;</span>, <span class="st">&quot;Pill&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>                <span class="at">font_size =</span> <span class="dv">12</span>)</span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discussion</span></span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>Findings replicate and extend Diaby et al. (2025). Smoking remained the dominant modality across all demographic groups, but substantial disparities were observed. The inverse socioeconomic gradient -- higher education and income predicting away from smoking toward edibles -- is consistent with broader patterns of health behavior stratification and has implications for harm reduction messaging. The strong racial disparity in smoking versus alternative modalities, particularly among Black cannabis users, warrants attention given the respiratory health implications of combustion-based use.</span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>The age gradient in vaping is notable: 74% of adolescent cannabis users (12-17) reported vaping compared to 32% of users aged 35+. This pattern differs from the adult-dominant vaping gradient observed in tobacco research and suggests distinct adoption patterns for cannabis vaporization among younger users.</span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="fu">### Limitations</span></span>
-<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses. The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability.</span>
-<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>Diaby, M., Agbonlahor, O., Fennell, B.S., Hart, J.L., &amp; Mattingly, D.T. (2025). Disparities in use modalities among adults who currently use cannabis, 2022-2023. *Journal of Cannabis Research, 7*, 26. https://doi.org/10.1186/s42238-025-00283-x</span>
-<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>Substance Abuse and Mental Health Services Administration. (2025). *2022-2024 National Survey on Drug Use and Health public use file*. Rockville, MD: Center for Behavioral Health Statistics and Quality.</span>
-<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto</span></span>
-<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <span class="ot">&lt;https://quarto.org&gt;</span>.</span>
-<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Running Code</span></span>
-<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</span>
-<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>You can add options to executable code like this</span>
-<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a>The <span class="in">`echo: false`</span> option disables the printing of code (only output is displayed).</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Cannabis Use Modalities Among U.S. Adults: A Replication and Extension of Diaby et al. (2025)&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Kristopher Bradley, PhD&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>This study replicates and extends Diaby et al. (2025), which examined disparities in cannabis use modalities among U.S. adults using 2022-2023 National Survey on Drug Use and Health (NSDUH) data. We extend the analysis to 2022-2024 (n=29,494 current cannabis users) and add medical versus recreational use as a moderating variable. Using survey-weighted logistic regression, we replicate the core findings: smoking remains the dominant modality (81.4%), with significant disparities by sex, age, race/ethnicity, education, and income. Higher education and income predict away from smoking toward edibles. Black cannabis users are substantially more likely to smoke and less likely to use alternative modalities. Extension analyses examine whether medical use status moderates these relationships.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Following legalization of cannabis across numerous U.S. states, the cannabis market has diversified substantially, with products including smoked flower, vaporizers, edibles, concentrates (dabbing), topicals, sublingual preparations, and pills now widely available. Understanding which populations use which modalities matters for public health because different delivery routes carry different health risk profiles -- combustion-based smoking carries respiratory risks absent from edibles or topicals, while vaporized concentrates may deliver substantially higher THC doses than smoked flower.</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>Diaby et al. (2025) provided the first comprehensive national examination of modality disparities using 2022-2023 NSDUH data, finding significant variation by sex, age, race/ethnicity, education, income, and state medical cannabis law status. The present study replicates those findings using 2022-2024 data and extends them by examining medical versus recreational use as a moderating variable -- a distinction central to understanding health-relevant cannabis use patterns but not examined in the original paper.</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Source</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>Data were drawn from the 2022-2024 National Survey on Drug Use and Health (NSDUH) combined public use file (n=232,441). NSDUH is an annual nationally representative survey of the U.S. civilian noninstitutionalized population aged 12 and older, conducted by the Substance Abuse and Mental Health Services Administration (SAMHSA). All analyses used the four-year combined public use file weight variable ANALWT2_C3 for pooled three-year estimates, with variance estimation using pseudo-stratum (VESTR_C) and pseudo-replicate (VEREP) variables per SAMHSA guidelines.</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="fu">### Analytic Sample</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>The analytic sample was restricted to respondents reporting past 30-day cannabis use (MJREC = 1, 8, or 11), yielding n=29,494 current cannabis users across 2022-2024. Modality variables were not collected in 2021, so the 2021 wave was excluded from modality analyses.</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Measures</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>**Cannabis use modalities** were assessed via seven binary variables indicating past-year use of each delivery method: smoking, vaping, dabbing, edibles, sublingual/oral absorption, topical application, and pills/capsules. Each was recoded to 1=Yes, 0=No, with don&#39;t know, refused, and blank responses treated as missing.</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>**Medical use** was assessed via MJANYMEDYR, indicating whether any past-year cannabis use was recommended by a doctor or health care professional (1=Yes, 0=No). Note that this variable changed slightly in 2022; 2021 data were excluded from analyses involving this variable.</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>**Demographic covariates** included sex (male/female), age category (12-17, 18-25, 26-34, 35+), race/ethnicity (White, Black, Native American, Native Hawaiian, Asian, Multiple, Hispanic), education (less than HS, HS grad/GED, some college, college graduate), personal income (&lt;$20k, $20-49k, $50-74k, $75k+), and geographic urbanicity (large metro, small metro, rural).</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Statistical Analysis</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>All analyses were conducted in R 4.5.2 using the survey package for complex survey design. Weighted prevalence estimates were computed using svymean() and svyby(). Multivariable logistic regression models were estimated using svyglm() with quasibinomial family for each modality outcome, adjusting for all demographic covariates simultaneously. Results are presented as odds ratios (OR) with 95% confidence intervals. All code is available at the project GitHub repository.</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>All code is available at the project GitHub repository. Missing data were minimal across all analytic variables (range 0.15%--0.34%) and handled via listwise deletion. Demographic covariates had no missing values. Estimates for the Native Hawaiian subgroup should be interpreted cautiously given the small unweighted sample size (n=111).</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Load saved data</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;nsduh_models.RData&quot;</span>)</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample Characteristics and Weighted Prevalence</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>Among 29,494 current cannabis users in 2022-2024, smoking was the most common modality (81.4%), followed by edibles (48.9%), vaping (43.0%), dabbing (20.1%), topicals (8.9%), sublingual use (6.7%), and pills (3.2%).</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r table1}</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Rebuild table1 from saved data</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>nsduh_design_2224 <span class="ot">&lt;-</span> <span class="fu">svydesign</span>(</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="sc">~</span>VEREP,</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">strata =</span> <span class="sc">~</span>VESTR_C,</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">weights =</span> <span class="sc">~</span>ANALWT2_C3,</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> nsduh_2224,</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">nest =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>fmt <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="fu">round</span>(x <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>)</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>overall <span class="ot">&lt;-</span> <span class="fu">svymean</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>                   <span class="at">design =</span> nsduh_design_2224, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>overall_row <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="st">&quot;Overall&quot;</span>,</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;smoke&quot;</span>]),</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;vape&quot;</span>]),</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;dab&quot;</span>]),</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;eat&quot;</span>]),</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;mouth&quot;</span>]),</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;skin&quot;</span>]),</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(<span class="fu">coef</span>(overall)[<span class="st">&quot;pill&quot;</span>])</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>sex_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>                  <span class="at">by =</span> <span class="sc">~</span>female, <span class="at">design =</span> nsduh_design_2224,</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>sex_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>),</span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>smoke),</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>vape),</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>dab),</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>eat),</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>mouth),</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>skin),</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(sex_prev<span class="sc">$</span>pill)</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>age_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>                  <span class="at">by =</span> <span class="sc">~</span>age_cat, <span class="at">design =</span> nsduh_design_2224,</span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>age_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;12-17&quot;</span>, <span class="st">&quot;18-25&quot;</span>, <span class="st">&quot;26-34&quot;</span>, <span class="st">&quot;35+&quot;</span>),</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>smoke),</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>vape),</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>dab),</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>eat),</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>mouth),</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>skin),</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(age_prev<span class="sc">$</span>pill)</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>educ_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="sc">~</span>educ, <span class="at">design =</span> nsduh_design_2224,</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>                   <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>educ_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;Less than HS&quot;</span>, <span class="st">&quot;HS grad/GED&quot;</span>, <span class="st">&quot;Some college&quot;</span>, <span class="st">&quot;College grad&quot;</span>),</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>smoke),</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>vape),</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>dab),</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>eat),</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>mouth),</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>skin),</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(educ_prev<span class="sc">$</span>pill)</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>inc_prev <span class="ot">&lt;-</span> <span class="fu">svyby</span>(<span class="sc">~</span>smoke <span class="sc">+</span> vape <span class="sc">+</span> dab <span class="sc">+</span> eat <span class="sc">+</span> mouth <span class="sc">+</span> skin <span class="sc">+</span> pill,</span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>                  <span class="at">by =</span> <span class="sc">~</span>income, <span class="at">design =</span> nsduh_design_2224,</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> svymean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>inc_rows <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$20k&quot;</span>, <span class="st">&quot;$20-49k&quot;</span>, <span class="st">&quot;$50-74k&quot;</span>, <span class="st">&quot;$75k+&quot;</span>),</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>  <span class="at">Smoke =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>smoke),</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>  <span class="at">Vape  =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>vape),</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dab   =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>dab),</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>  <span class="at">Eat   =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>eat),</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sublingual =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>mouth),</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>  <span class="at">Topical =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>skin),</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pill  =</span> <span class="fu">fmt</span>(inc_prev<span class="sc">$</span>pill)</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(overall_row, sex_rows, age_rows, educ_rows, inc_rows)</span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(table1,</span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 1. Weighted prevalence of cannabis use modalities by demographic characteristics, NSDUH 2022-2024&quot;</span>,</span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Smoking&quot;</span>, <span class="st">&quot;Vaping&quot;</span>, <span class="st">&quot;Dabbing&quot;</span>, </span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Edibles&quot;</span>, <span class="st">&quot;Sublingual&quot;</span>, <span class="st">&quot;Topical&quot;</span>, <span class="st">&quot;Pill&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Sex&quot;</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Age&quot;</span>, <span class="dv">4</span>, <span class="dv">7</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Education&quot;</span>, <span class="dv">8</span>, <span class="dv">11</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pack_rows</span>(<span class="st">&quot;Income&quot;</span>, <span class="dv">12</span>, <span class="dv">15</span>)</span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### Multivariable Logistic Regression</span></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r table2}</span></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>extract_or <span class="ot">&lt;-</span> <span class="cf">function</span>(model, modality_name) {</span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>(model, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">modality =</span> modality_name) <span class="sc">%&gt;%</span></span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(modality, term, estimate, conf.low, conf.high, p.value)</span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>results_table <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_smoke, <span class="st">&quot;Smoking&quot;</span>),</span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_vape,  <span class="st">&quot;Vaping&quot;</span>),</span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_dab,   <span class="st">&quot;Dabbing&quot;</span>),</span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_eat,   <span class="st">&quot;Edibles&quot;</span>),</span>
+<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_mouth, <span class="st">&quot;Sublingual&quot;</span>),</span>
+<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_skin,  <span class="st">&quot;Topical&quot;</span>),</span>
+<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_or</span>(model_pill,  <span class="st">&quot;Pill&quot;</span>)</span>
+<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a>pub_table <span class="ot">&lt;-</span> results_table <span class="sc">%&gt;%</span></span>
+<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">!=</span> <span class="st">&quot;(Intercept)&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a>    <span class="at">sig =</span> <span class="fu">case_when</span>(</span>
+<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.001</span> <span class="sc">~</span> <span class="st">&quot;***&quot;</span>,</span>
+<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.01</span>  <span class="sc">~</span> <span class="st">&quot;**&quot;</span>,</span>
+<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>  <span class="sc">~</span> <span class="st">&quot;*&quot;</span>,</span>
+<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a>      p.value <span class="sc">&lt;</span> <span class="fl">0.10</span>  <span class="sc">~</span> <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a>    <span class="at">OR_CI =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(estimate, <span class="dv">2</span>), <span class="st">&quot; (&quot;</span>, </span>
+<span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(conf.low, <span class="dv">2</span>), <span class="st">&quot;-&quot;</span>, </span>
+<span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(conf.high, <span class="dv">2</span>), <span class="st">&quot;)&quot;</span>, sig)</span>
+<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(modality, term, OR_CI) <span class="sc">%&gt;%</span></span>
+<span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> modality, <span class="at">values_from =</span> OR_CI)</span>
+<span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-200"><a href="#cb4-200" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pub_table,</span>
+<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Table 2. Adjusted odds ratios for cannabis use modalities, NSDUH 2022-2024 (n=29,494)&quot;</span>,</span>
+<span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;Smoking&quot;</span>, <span class="st">&quot;Vaping&quot;</span>, <span class="st">&quot;Dabbing&quot;</span>,</span>
+<span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Edibles&quot;</span>, <span class="st">&quot;Sublingual&quot;</span>, <span class="st">&quot;Topical&quot;</span>, <span class="st">&quot;Pill&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a>                <span class="at">font_size =</span> <span class="dv">12</span>)</span>
+<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-208"><a href="#cb4-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discussion</span></span>
+<span id="cb4-209"><a href="#cb4-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-210"><a href="#cb4-210" aria-hidden="true" tabindex="-1"></a>Findings replicate and extend Diaby et al. (2025). Smoking remained the dominant modality across all demographic groups, but substantial disparities were observed. The inverse socioeconomic gradient -- higher education and income predicting away from smoking toward edibles -- is consistent with broader patterns of health behavior stratification and has implications for harm reduction messaging. The strong racial disparity in smoking versus alternative modalities, particularly among Black cannabis users, warrants attention given the respiratory health implications of combustion-based use.</span>
+<span id="cb4-211"><a href="#cb4-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-212"><a href="#cb4-212" aria-hidden="true" tabindex="-1"></a>The age gradient in vaping is notable: 74% of adolescent cannabis users (12-17) reported vaping compared to 32% of users aged 35+. This pattern differs from the adult-dominant vaping gradient observed in tobacco research and suggests distinct adoption patterns for cannabis vaporization among younger users.</span>
+<span id="cb4-213"><a href="#cb4-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-214"><a href="#cb4-214" aria-hidden="true" tabindex="-1"></a><span class="fu">### Limitations</span></span>
+<span id="cb4-215"><a href="#cb4-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-216"><a href="#cb4-216" aria-hidden="true" tabindex="-1"></a>This study has several limitations. NSDUH data are cross-sectional and self-reported, precluding causal inference. Geographic identifiers are suppressed in public use files, limiting state-level analyses and precluding inclusion of state medical cannabis law status as a covariate, which was examined in Diaby et al. (2025). The modality variables were not available in 2021, restricting the pooled analysis to three years. Medical use status changed measurement in 2022, limiting longitudinal comparability.</span>
+<span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a>Several analytic differences from Diaby et al. (2025) should also be noted. The present analysis includes respondents aged 12-17, whereas Diaby et al. restricted to adults 18 and older; this likely contributes to higher overall vaping prevalence estimates given the substantially higher vaping rates among adolescents (74.1% vs. 58.9% among 18-25 year olds in the present sample). Sensitivity analyses adding tobacco, alcohol, and psychological distress as covariates, and analyses restricted to adults aged 18-25, represent natural extensions not included in the present analysis but identified as priorities for future work.</span>
+<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-219"><a href="#cb4-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## Future Directions</span></span>
+<span id="cb4-220"><a href="#cb4-220" aria-hidden="true" tabindex="-1"></a>Several extensions of the present analysis are planned. First, sensitivity analyses replicating Diaby et al. (2025) more closely will be conducted, including models restricted to adults aged 18 and older, models adding current tobacco use, alcohol use, and illicit drug use as covariates, and a modified Poisson regression examining the number of modalities used as a count outcome.</span>
+<span id="cb4-221"><a href="#cb4-221" aria-hidden="true" tabindex="-1"></a>Second, and most central to the extension goals of this project, psychological distress will be added as both a covariate and an outcome. The NSDUH includes the Kessler 6 (K6) psychological distress scale, a validated clinical instrument assessing anxiety and mood symptoms over the past 30 days. Planned analyses will examine whether cannabis use modality predicts K6 distress scores after adjusting for demographic covariates, and whether medical versus recreational use status moderates this relationship. This extension directly addresses a gap in the existing literature by connecting modality choice to mental health outcomes in a nationally representative sample.</span>
+<span id="cb4-222"><a href="#cb4-222" aria-hidden="true" tabindex="-1"></a>Third, a year-by-year trend analysis will examine whether modality prevalence shifted meaningfully between 2022 and 2024, which the pooled cross-sectional design cannot fully address.</span>
+<span id="cb4-223"><a href="#cb4-223" aria-hidden="true" tabindex="-1"></a>These extensions are in active development and will be added to this repository as analyses are completed.</span>
+<span id="cb4-224"><a href="#cb4-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-225"><a href="#cb4-225" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb4-226"><a href="#cb4-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-227"><a href="#cb4-227" aria-hidden="true" tabindex="-1"></a>Diaby, M., Agbonlahor, O., Fennell, B.S., Hart, J.L., &amp; Mattingly, D.T. (2025). Disparities in use modalities among adults who currently use cannabis, 2022-2023. *Journal of Cannabis Research, 7*, 26. https://doi.org/10.1186/s42238-025-00283-x</span>
+<span id="cb4-228"><a href="#cb4-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-229"><a href="#cb4-229" aria-hidden="true" tabindex="-1"></a>Substance Abuse and Mental Health Services Administration. (2025). *2022-2024 National Survey on Drug Use and Health public use file*. Rockville, MD: Center for Behavioral Health Statistics and Quality.</span>
+<span id="cb4-230"><a href="#cb4-230" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb4-231"><a href="#cb4-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-232"><a href="#cb4-232" aria-hidden="true" tabindex="-1"></a><span class="fu">## </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
